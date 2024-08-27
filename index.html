@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Dante's Library</h1>
+    </header>
+    <div class="user-input">
+        <form action="">
+            <div class="title">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Book Name" required>
+            </div>
+            <div class="author">
+                <label for="author">Author</label>
+                <input type="text" id="author" placeholder="Author Name" required>
+            </div>
+            <div class="pages">
+                <label for="pages">Pages</label>
+                <input type="text" id="pages" placeholder="Number of Pages" required>
+            </div>
+            <div class="read">
+                <p>Did you already read the book?</p>
+                <label for="yes">Yes</label>
+                <input type="radio" name="answer" id="yes" required>
+                <label for="no">No</label>
+                <input type="radio" name="answer" id="no" required>
+            </div>
+            <div class="actions">
+                <input type="submit" value="Add New Book" id="submit">
+                <input type="reset" value="Reset" id="reset">
+            </div>
+        </form>
+    </div>
+    <div class="library-display">
+        <h1>LIBRARY DISPLAY UNDER</h1>
+        <div class="books" id="library">
+            <div class="row">
+                <p>Title</p>
+                <p>Author</p>
+                <p>Pages</p>
+                <p>Read</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright</p>
+    </footer>
+    
+</body>
+</html>
