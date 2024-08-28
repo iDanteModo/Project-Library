@@ -129,6 +129,10 @@ form {
     font-size: 1.2rem;
 }
 
+.read-row input {
+    cursor: pointer;
+}
+
 .actions {
     grid-column: 2;
     grid-row: 3;
@@ -140,6 +144,7 @@ form {
     border-radius: 30px;
     border: 2px transparent solid;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .actions input:hover,
@@ -155,6 +160,7 @@ form {
     flex-direction: column;   
     border: 5px var(--fontColor) solid;
     gap: 20px;
+    cursor:default;
 }
 
 .books{ 
@@ -177,6 +183,7 @@ form {
     font-weight: 200;
     padding: 5px 10px;
     margin: -5px -10px;
+    cursor: pointer;
 }
 
 .library-display button:hover {
@@ -190,4 +197,7 @@ form {
 footer {
     grid-column: 2 /span 3;
     grid-row: 4;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
 }

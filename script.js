@@ -66,6 +66,13 @@ function addBookToLibrary() {
         button.addEventListener('click',() => {
             div.remove();
         })
+        inputRead.addEventListener("click", () => {
+            if(inputRead.textContent == "Yes"){
+                inputRead.textContent = "No"
+            }else {
+                inputRead.textContent = "Yes";
+            }
+        });
     title.value = "";
     author.value = "";
     pages.value = "";
@@ -111,6 +118,13 @@ myLibrary.forEach((item) => {
     div.appendChild(button);
     button.addEventListener('click',() => {
         div.remove();
+    })
+    read.addEventListener("click", () => {
+        if(read.textContent == "Yes"){
+            read.textContent = "No"
+        }else {
+            read.textContent = "Yes";
+        }
     })
 })
 
