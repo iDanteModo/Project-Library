@@ -40,6 +40,7 @@ function addBookToLibrary() {
         }
         const inputBook = new Book(title.value, author.value, pages.value, wasread);
         myLibrary.push(inputBook);
+        console.table(myLibrary);
         const div = document.createElement('div')
         const button = document.createElement('button');
         div.classList.add('row');
@@ -64,7 +65,12 @@ function addBookToLibrary() {
         div.appendChild(inputPages);
         div.appendChild(inputRead);
         div.appendChild(button);
+        button.dataset.bookName = title.value ;
         button.addEventListener('click',() => {
+            let bookIndex = myLibrary.findIndex(
+                (book) => book["title"]=== button.dataset.bookName
+            )
+            myLibrary.splice(bookIndex,1);
             div.remove();
         })
         inputRead.addEventListener("click", () => {
@@ -103,6 +109,7 @@ myLibrary.forEach((item) => {
     const read = document.createElement('p');
     read.classList.add("readStatus");
     const button = document.createElement('button')
+    button.dataset.bookName = item.title ;
     title.textContent = item.title;
     author.textContent = item.author;
     pages.textContent = item.pages;
@@ -119,6 +126,10 @@ myLibrary.forEach((item) => {
     div.appendChild(read);
     div.appendChild(button);
     button.addEventListener('click',() => {
+        let bookIndex = myLibrary.findIndex(
+            (book) => book["title"]=== button.dataset.bookName
+        )
+        myLibrary.splice(bookIndex,1);
         div.remove();
     })
     read.addEventListener("click", () => {
