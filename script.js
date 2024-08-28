@@ -134,11 +134,24 @@ myLibrary.forEach((item) => {
     })
     read.addEventListener("click", () => {
         if(read.textContent == "Yes"){
-            read.textContent = "No"
+            let bookIndex = myLibrary.findIndex(
+                (book) => book["title"]=== button.dataset.bookName
+            )
+            myLibrary[bookIndex]["read"] = false;
+            console.log(myLibrary[bookIndex]["read"]);
+            console.table(myLibrary);
+            read.textContent = "No";
         }else {
+            let bookIndex = myLibrary.findIndex(
+                (book) => book["title"]=== button.dataset.bookName
+            )
+            myLibrary[bookIndex]["read"] = true;
+            console.log(myLibrary[bookIndex]["read"]);
+            console.table(myLibrary);
             read.textContent = "Yes";
         }
     })
 })
 
 addBookToLibrary();
+console.log(Book.prototype);
