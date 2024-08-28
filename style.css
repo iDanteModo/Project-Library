@@ -186,6 +186,11 @@ form {
     cursor: pointer;
 }
 
+.readStatus:hover {
+    color: var(--fontColor);
+    cursor: pointer;
+}
+
 .library-display button:hover {
     border: 2px black solid;
 }

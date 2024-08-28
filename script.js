@@ -47,6 +47,7 @@ function addBookToLibrary() {
         const inputAuthor = document.createElement('p');
         const inputPages = document.createElement('p');
         const inputRead = document.createElement('p');
+        inputRead.classList.add('readStatus');
         inputTitle.textContent = title.value;
         inputAuthor.textContent = author.value;
         inputPages.textContent = pages.value;
@@ -100,6 +101,7 @@ myLibrary.forEach((item) => {
     const author = document.createElement('p');
     const pages = document.createElement('p');
     const read = document.createElement('p');
+    read.classList.add("readStatus");
     const button = document.createElement('button')
     title.textContent = item.title;
     author.textContent = item.author;
