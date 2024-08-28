@@ -2,6 +2,10 @@
 
 :root {
   line-height: 1.5;
+  --backgroundColor: rgb(35, 45, 63);
+  --inputColor: rgb(0, 91, 65);
+  --fontColor: rgb(0, 129, 112);
+  --complementColor: rgb(15, 15, 15);
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
@@ -29,9 +33,17 @@ img {
     color-scheme: dark;
 }
 
+html {
+    background-color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
 .row { 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 3fr 3fr 1fr 1fr 1fr;
+    border-bottom: 2px var(--fontColor) solid;
+    padding: 20px;
 }
 
 body {
@@ -39,6 +51,8 @@ body {
     display: grid;
     grid-template-columns: 50px 1fr 1fr 1fr 50px;
     grid-template-rows: 1fr auto 5fr 0.5fr;
+    border: 4px black solid;
+    background-color: var(--backgroundColor);
 }
 
 header {
@@ -49,6 +63,7 @@ header {
 header > h1 {
     text-align: center;
     font-size: 4rem;
+    font-weight: 800;
 }
 
 .user-input {
@@ -59,7 +74,7 @@ header > h1 {
 form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 2fr 1fr;
+    grid-template-rows: auto auto auto 20px;
     gap: 20px;
 }
 
@@ -70,44 +85,107 @@ form {
 .actions { 
     align-self: center;
     justify-self: center;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 10px;
+}
+
+.author > input,
+.title > input,
+.pages > input {
+    width: 300px;
+    border-radius: 15px;
+    border-color: transparent;
+    background-color: var(--inputColor);
+    border: 1px transparent solid;
+    font-weight: 200;
+    padding-left: 20px;
+    font-size: 1.1rem;
+}
+
+.author > input:hover,
+.title > input:hover,
+.pages > input:hover {
+    border: 1px black solid;
+}
+
+::placeholder {
+    font-size: 1.1rem;
 }
 
 .read {
     grid-column: 2;
     grid-row: 2;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
-
+.read-row {
+    display: flex;
+    gap: 5px;
+    font-size: 1.2rem;
+}
 
 .actions {
     grid-column: 2;
     grid-row: 3;
 }
 
-.library-display > h1 {
-    text-align: center;
+.actions input,
+.actions input {
+    padding: 5px 20px;
+    border-radius: 30px;
+    border: 2px transparent solid;
+    font-size: 1.2rem;
 }
+
+.actions input:hover,
+.actions input:hover {
+    border: 2px black solid;
+} 
 
 .library-display {
     grid-column: 2 / span 3;
     grid-row: 3;
+    overflow: scroll;
     display: flex;
     flex-direction: column;   
+    border: 5px var(--fontColor) solid;
+    gap: 20px;
 }
 
 .books{ 
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    font-size: 1.3rem;
+    font-weight: 200;
+    justify-content: center;
+}
+
+.books .row:first-of-type {
+    font-weight: 600;
 }
 
 .library-display button {
     align-self: center;
-    justify-self: center;
+    justify-self: start;
+    border-radius: 25px;
+    border: 2px transparent solid;
+    font-weight: 200;
+    padding: 5px 10px;
+    margin: -5px -10px;
 }
+
+.library-display button:hover {
+    border: 2px black solid;
+}
+
+.library-display .books > :not(.first) {
+    overflow: scroll;
+  }
 
 footer {
     grid-column: 2 /span 3;
