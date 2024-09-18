@@ -21,17 +21,17 @@ function addBookToLibrary() {
     const no = document.querySelector('#no');
     submit.addEventListener("click", () => {
         event.preventDefault();
+        document.querySelectorAll('.valid').forEach(element => {
+            element.textContent = "Thank you";
+        });
+        validity();
         if(!title.value) {
-            alert("Please Enter a Book Name");
             return false;
         }else if(!author.value) {
-            alert("Please Enter The Author's Name")
             return false;
         }else if(!pages.value) {
-            alert("Please enter the number of pages");
             return false;
         }else if(yes.checked == false && no.checked == false) {
-            alert("Please select if you read the book or not");
             return false;
         }
         let wasread = true;

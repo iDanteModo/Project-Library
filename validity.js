@@ -9,11 +9,8 @@ export function validity() {
     const pagesError = document.querySelector('#pages + span.error');
     const pagesValid = document.getElementById('vPages');
 
-
     title.addEventListener('input', () => {
         if (title.validity.valid) {
-            titleError.textContent = "";
-            titleError.className = "error";
             showValid();
         }else {
             titleValid.textContent = "";
@@ -23,8 +20,6 @@ export function validity() {
 
     author.addEventListener('input', () => {
         if (author.validity.valid) {
-            authorError.textContent = "";
-            authorError.className = "error";
             showValid();
         } else {
             authorValid.textContent = "";
@@ -34,8 +29,6 @@ export function validity() {
     
     pages.addEventListener('input', () => {
         if (pages.validity.valid) {
-            pagesError.textContent = "";
-            pagesError.className = "error";
             showValid();
         } else {
             pagesValid.textContent = "";
@@ -45,30 +38,41 @@ export function validity() {
 
     const showError = () => {
         if(title.validity.valueMissing) {
+            titleValid.textContent ="";
             titleError.textContent = "Please enter a title.";
         } else if (title.validity.tooShort) {
+            titleValid.textContent ="";
             titleError.textContent = "Minimum 2 characters";
         }
 
         if(author.validity.valueMissing) {
+            authorValid.textContent ="";
             authorError.textContent = "Please enter an author";
         }
 
         if(pages.validity.valueMissing) {
+            pagesValid.textContent ="";
             pagesError.textContent = "Please enter the number of pages";
         }else if (pages.validity.rangeUnderflow) {
+            pagesValid.textContent ="";
             pagesError.textContent = "Minimum 2 pages";
         }
     }
 
     const showValid = () => {
         if(title.validity.valid) {
+            titleError.textContent = "";
+            titleError.className = "error";
             titleValid.textContent = "OK";
         }
         if(author.validity.valid) {
+            authorError.textContent = "";
+            authorError.className = "error";
             authorValid.textContent = "OK";
         }
         if(pages.validity.valid) {
+            pagesError.textContent = "";
+            pagesError.className = "error";
             pagesValid.textContent = "OK";
         }
     }
