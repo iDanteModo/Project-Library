@@ -74,7 +74,7 @@ header > h1 {
 form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto 20px;
+    grid-template-rows: auto auto auto auto 20px;
     gap: 20px;
 }
 
@@ -101,16 +101,57 @@ form {
     font-weight: 200;
     padding-left: 20px;
     font-size: 1.1rem;
+    outline: none;
 }
 
 .author > input:hover,
 .title > input:hover,
 .pages > input:hover {
     border: 1px black solid;
+    outline: none;
 }
 
 ::placeholder {
     font-size: 1.1rem;
+}
+
+input[type = text]:focus,
+input[type = number]:focus {
+    outline: none;
+}
+
+input[type = text]:invalid,
+input[type = number]:invalid {
+    border: 2px red solid;
+    outline: none;
+    background-color: rgb(51, 51, 51);
+}
+
+input[type = text]:valid,
+input[type = number]:valid {
+    border: 2px green solid;
+}
+
+.groupError {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.error {
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 100;
+    color: rgb(252, 0, 0);
+}
+
+.valid {
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 100;
+    color: green;
 }
 
 .read {

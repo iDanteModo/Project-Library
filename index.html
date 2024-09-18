@@ -5,25 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Dante's Library</h1>
     </header>
     <div class="user-input">
-        <form action="">
+        <form action="" novalidate>
             <div class="title">
-                <label for="title">Title:</label>
-                <input type="text" id="title" placeholder="Book Name" required>
+                <label for="title" >Title:</label>
+                <div class="groupError">
+                    <input type="text" id="title" placeholder="Book Name" required minlength="2">
+                    <span  class="error" aria-live="polite"></span>
+                    <span  class="valid" id="vTitle" aria-live="polite"></span>
+                </div>
             </div>
             <div class="author">
                 <label for="author">Author:</label>
-                <input type="text" id="author" placeholder="Author Name" required>
+                <div class="groupError">
+                    <input type="text" id="author" placeholder="Author Name" required>
+                    <span  class="error" aria-live="polite"></span>
+                    <span  class="valid" id="vAuthor" aria-live="polite"></span>
+                </div>
             </div>
             <div class="pages">
                 <label for="pages">Pages:</label>
-                <input type="text" id="pages" placeholder="Number of Pages" required>
+                <div class="groupError">
+                    <input type="number" id="pages" placeholder="Number of Pages" required min="2">
+                    <span  class="error" aria-live="polite"></span>
+                    <span  class="valid" id="vPages" aria-live="polite"> </span>
+                </div>
             </div>
             <div class="read">
                 <p>Did you already read the book?</p>
@@ -46,7 +58,7 @@
                 <p>Title</p>
                 <p>Author</p>
                 <p>Pages</p>
-                <p>Read</p>
+                <p>Did I Read?</p>
                 <p>Remove</p>
             </div>
         </div>

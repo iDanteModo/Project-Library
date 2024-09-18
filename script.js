@@ -1,3 +1,5 @@
+import { validity } from "./validity.js";
+
 const myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -154,4 +156,5 @@ myLibrary.forEach((item) => {
 })
 
 addBookToLibrary();
-console.log(Book.prototype);
+validity();
+
