@@ -10,30 +10,18 @@ export function validity() {
     const pagesValid = document.getElementById('vPages');
 
     title.addEventListener('input', () => {
-        if (title.validity.valid) {
-            showValid();
-        }else {
-            titleValid.textContent = "";
-            showError();
-        }
+        showError();
+        showValid();
     })
 
     author.addEventListener('input', () => {
-        if (author.validity.valid) {
-            showValid();
-        } else {
-            authorValid.textContent = "";
-            showError();
-        }  
+        showError();
+        showValid();
     })
     
     pages.addEventListener('input', () => {
-        if (pages.validity.valid) {
-            showValid();
-        } else {
-            pagesValid.textContent = "";
-            showError();
-        }
+        showError();
+        showValid();
     })
 
     const showError = () => {

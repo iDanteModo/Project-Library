@@ -23,6 +23,7 @@ function addBookToLibrary() {
         event.preventDefault();
         document.querySelectorAll('.valid').forEach(element => {
             element.textContent = "Thank you";
+            element.style.color = "transparent";
         });
         validity();
         if(!title.value) {
